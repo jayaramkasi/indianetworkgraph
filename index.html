@@ -22,33 +22,37 @@
 var dataSet = {};
 d3.json("/data.json",function(error,dataSet){
   if(error) throw error;
-
-  var svg = d3.select('svg'), width = 960, height = 600;
+  
+  var svg = d3.select('svg'), width = Math.max(960, window.innerWidth), height = 600;
     
-  svg.attr('width',width)
+    svg.attr('width',width-20)
     .attr('height',height);
 
   var g = svg.append("g");  
   g.append("use")
     .attr("xlink:href","india.svg#Layer_1");
   
-  var nodeg = g.append("g")
+    var nodeg = g.append("g")
           .attr("id","nodes");
-  var tooltip = d3.select("body")
-                      .append("div")
-                      .style("border","1px solid #9768d1")
-                      .style("position", "absolute")
-                      .style("background-color","white")
-                      .style("padding","5px")
-                      .style("z-index", "10")
-                      .style("visibility", "hidden");
+    var tooltip = d3.select("body")
+      .append("div")
+      .style("border","1px solid #9768d1")
+      .style("position", "absolute")
+      .style("background-color","white")
+      .style("padding","5px")
+      .style("z-index", "10")
+      .style("visibility", "hidden");
 
   var x = d3.scaleLinear()
-              .domain(d3.extent(dataSet.nodes,function(d){ return (d.lon);}) )
-              .range([-790,656]);
+      .domain([
+        d3.min(dataSet.nodes,function(d){ return (d.lon);}),
+        d3.max(dataSet.nodes,function(d){ return (d.lon);})])
+      .range([-790,656]);
   var y = d3.scaleLinear()
-      .domain(d3.extent(dataSet.nodes,function(d){ return (d.lat);}))
-      .range([632,60]);
+      .domain([
+          d3.max(dataSet.nodes,function(d){ return (d.lat);}),
+          d3.min(dataSet.nodes,function(d){ return (d.lat);})])
+      .range([60,632]);
 
   var thicknessScale = d3.scaleLinear()
       .domain(d3.extent(dataSet.edges,function(d){ return d.count; }))
@@ -57,9 +61,7 @@ d3.json("/data.json",function(error,dataSet){
   function zoomed() {
       g.attr("transform", d3.event.transform);
     }
-  svg.call(d3.zoom()
-           .scaleExtent([0.5, 8])
-           .on('zoom',zoomed));
+  svg.call(d3.zoom().scaleExtent([0.5, 8]).on('zoom',zoomed));
 
   var dots = nodeg.selectAll("g")
     .data(dataSet.nodes)
@@ -72,19 +74,18 @@ d3.json("/data.json",function(error,dataSet){
       .style("cursor","pointer"); 
   dots.transition() //  Had to split the construction so as to trigger circle animation
       .duration(1000)
-      .attr("r",1)
+      .attr("r",function(d){ return 1;})
       .attr("id",function(d){return "c"+d.id;})
       .style("fill","#9768d1");
   dots.on("mouseover", function(d){ 
         tooltip.style("visibility", "visible")
-                .html("<b>"+d.city+"</b><br>");
+        .html("<b>"+d.city+"</b><br>");
         d3.selectAll(".edge").each(function(edge){
             d3.select("#edge_from_"+edge.source+"_to_"+edge.target)
                       .attr("opacity",edge.source===d.id?"1":"0.15");
         });
       })
-      .on("mousemove", function(d){
-          return tooltip.style("top",
+      .on("mousemove", function(d){return tooltip.style("top",
            (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
       .on("mouseout", function(d){
         d3.selectAll(".edge").each(function(edge){
@@ -92,22 +93,24 @@ d3.json("/data.json",function(error,dataSet){
                       .attr("opacity","1");
             });
         return tooltip.style("visibility", "hidden");})
+
       .append("svg:title")
       .text(function(d,i){ return d.name;});
 
+
   var edgeg = g.append("g")
-                .attr("class","edges");
+          .attr("class","edges");
   var lines = edgeg.selectAll(".edges")
-                      .data(dataSet.edges)
-                      .enter()
-                      .append("g")
-                        .attr("id",function(d,i){  return "edge_from_"+d.source+"_to_"+d.target; })
-                        .attr("class","edge")
-                        .append("path")
-                          .attr("class", "running")
-                          .attr("id", function(d){ return "edge_from"+d.source+"_to"+d.target; })
-                          .attr("stroke",'#73be44')
-                          .attr("d",function(d,i){
+    .data(dataSet.edges)
+    .enter()
+    .append("g")
+      .attr("id",function(d,i){  return "edge_from_"+d.source+"_to_"+d.target; })
+      .attr("class","edge")
+      .append("path")
+        .attr("class", "running")
+        .attr("id", function(d){ return "edge_from"+d.source+"_to"+d.target; })
+        .attr("stroke",'#73be44')
+        .attr("d",function(d,i){
           var x2 = x(dataSet.nodes[d.target-1].lon), x1 = x(dataSet.nodes[d.source-1].lon);
           var y2 = y(dataSet.nodes[d.target-1].lat) ,y1 = y(dataSet.nodes[d.source-1].lat);
           var dx = x2 - x1, dy = y2 - y1, distance = Math.sqrt(Math.pow(dx,2)+Math.pow(dy,2));
