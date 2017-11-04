@@ -20,7 +20,7 @@
 
 <script>
 var dataSet = {};
-d3.json("/data.json",function(error,dataSet){
+d3.json("data.json",function(error,dataSet){
   if(error) throw error;
   
   var svg = d3.select('svg'), width = Math.max(960, window.innerWidth), height = 600;
