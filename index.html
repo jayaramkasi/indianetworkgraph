@@ -19,7 +19,6 @@
    </div>
 
 <script>
-var dataSet = {};
 d3.json("data.json",function(error,dataSet){
   if(error) throw error;
   
@@ -55,8 +54,9 @@ d3.json("data.json",function(error,dataSet){
       .range([60,632]);
 
   var thicknessScale = d3.scaleLinear()
-      .domain([d3.min(dataSet.edges,function(d){ return d.count; }),d3.max(dataSet.edges,function(d){ return d.count; })])
-      .range([1,Math.min(4,d3.max(dataSet.edges,function(d){ return d.count;}))])
+      .domain(d3.extent(dataSet.edges,function(d){ return d.Count; }))
+      .range([1,Math.min(4,d3.max(dataSet.edges,function(d){ return d.count;}))]);
+  
   function zoomed() {
       g.attr("transform", d3.event.transform);
     }
@@ -79,7 +79,7 @@ d3.json("data.json",function(error,dataSet){
   dots.on("mouseover", function(d){ 
         tooltip.style("visibility", "visible")
         .html("<b>"+d.City+"</b><br>");
-        d3.selectAll(".edge").each(function(edge){
+        d3.selectAll(".edge").each(function(edge){  //Hide all irrelevant edges
             d3.select("#edge_from_"+edge.source+"_to_"+edge.target)
                       .attr("opacity",edge.source===d.id?"1":"0.15");
         });
@@ -116,7 +116,7 @@ d3.json("data.json",function(error,dataSet){
           var dr = distance*2;
           return "M" + x1 + "," + y1 + "A" + dr + ","+ dr + " 0 0,1 "+ x2 + "," + y2;
         })
-        .style("stroke-width", function(d) { return thicknessScale(d.count); })
+        .style("stroke-width", function(d) { return thicknessScale(d.Count); })
         .style("z-index","10")
         .attr("fill","none")
         .style("cursor","pointer")
