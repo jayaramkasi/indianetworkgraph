@@ -57,6 +57,7 @@ d3.json("/data.json",function(error,dataSet){
   var thicknessScale = d3.scaleLinear()
       .domain(d3.extent(dataSet.edges,function(d){ return d.count; }))
       .range([1,Math.min(4,d3.max(dataSet.edges,function(d){ return d.count;}))])
+  // Enable SVG pan & zoom
   function zoomed() {
       g.attr("transform", d3.event.transform);
     }
