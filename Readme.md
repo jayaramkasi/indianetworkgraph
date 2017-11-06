@@ -1,1 +1,1 @@
-Map showing the pattern of transportation requests between cities in India. This helps us plan the logistics network.
+Map showing the pattern of transportation requests between cities in India. This helps us plan our logistics network.

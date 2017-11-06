@@ -1,647 +1,125 @@
 {
 	"nodes": [
-			 {
-			   "id": 1,
-			   "city": "Bengaluru",
-			   "lat": 12.976,
-			   "lon": 77.555
-			 },
-			 {
-			   "id": 2,
-			   "city": "Chennai",
-			   "lat": 13.0485,
-			   "lon": 80.2035
-			 },
-			 {
-			   "id": 3,
-			   "city": "Mumbai",
-			   "lat": 19.20655,
-			   "lon": 72.9732
-			 },
-			 {
-			   "id": 4,
-			   "city": "New Delhi",
-			   "lat": 28.54655,
-			   "lon": 77.2059
-			 },
-			 {
-			   "id": 5,
-			   "city": "Hyderabad",
-			   "lat": 17.4045,
-			   "lon": 78.4795
-			 },
-			 {
-			   "id": 6,
-			   "city": "Pune",
-			   "lat": 18.577,
-			   "lon": 73.845
-			 },
-			 {
-			   "id": 7,
-			   "city": "Lucknow",
-			   "lat": 26.8485,
-			   "lon": 80.945
-			 },
-			 {
-			   "id": 8,
-			   "city": "Ahmedabad",
-			   "lat": 23.023,
-			   "lon": 72.584
-			 },
-			 {
-			   "id": 9,
-			   "city": "Chandigarh",
-			   "lat": 30.728,
-			   "lon": 76.765
-			 },
-			 {
-			   "id": 10,
-			   "city": "Dehradun",
-			   "lat": 30.3295,
-			   "lon": 78.0215
-			 },
-			 {
-			   "id": 11,
-			   "city": "Kovvur",
-			   "lat": 17.01855,
-			   "lon": 81.72875
-			 },
-			 {
-			   "id": 12,
-			   "city": "Egattur",
-			   "lat": 13.1,
-			   "lon": 79.845
-			 },
-			 {
-			   "id": 13,
-			   "city": "Meerut",
-			   "lat": 28.973,
-			   "lon": 77.77845
-			 },
-			 {
-			   "id": 14,
-			   "city": "Mysore",
-			   "lat": 12.31,
-			   "lon": 76.625
-			 },
-			 {
-			   "id": 15,
-			   "city": "Coimbatore",
-			   "lat": 11.10035,
-			   "lon": 76.9806
-			 },
-			 {
-			   "id": 16,
-			   "city": "Rajkot",
-			   "lat": 22.29,
-			   "lon": 70.78
-			 },
-			 {
-			   "id": 17,
-			   "city": "Kolkata",
-			   "lat": 22.65735,
-			   "lon": 88.3294
-			 },
-			 {
-			   "id": 18,
-			   "city": "FALLBACK_city",
-			   "lat": 0,
-			   "lon": 0
-			 },
-			 {
-			   "id": 19,
-			   "city": "Trivandrum",
-			   "lat": 8.53026,
-			   "lon": 76.9198
-			 },
-			 {
-			   "id": 20,
-			   "city": "Jaipur",
-			   "lat": 26.8818,
-			   "lon": 75.7816
-			 },
-			 {
-			   "id": 21,
-			   "city": "Mangalore",
-			   "lat": 12.87075,
-			   "lon": 74.8567
-			 },
-			 {
-			   "id": 22,
-			   "city": "Visakhapatnam",
-			   "lat": 17.6958,
-			   "lon": 83.22635
-			 },
-			 {
-			   "id": 23,
-			   "city": "Indore",
-			   "lat": 22.72945,
-			   "lon": 75.8568
-			 },
-			 {
-			   "id": 24,
-			   "city": "Bhubaneshwar",
-			   "lat": 20.38555,
-			   "lon": 85.869
-			 },
-			 {
-			   "id": 25,
-			   "city": "Kochi",
-			   "lat": 10.01301,
-			   "lon": 76.3286
-			 },
-			 {
-			   "id": 26,
-			   "city": "Vadodara",
-			   "lat": 22.34105,
-			   "lon": 73.17305
-			 },
-			 {
-			   "id": 27,
-			   "city": "Nagpur",
-			   "lat": 21.1279,
-			   "lon": 79.07265
-			 },
-			 {
-			   "id": 28,
-			   "city": "Madurai",
-			   "lat": 9.91219,
-			   "lon": 78.1087
-			 },
-			 {
-			   "id": 29,
-			   "city": "Trichy",
-			   "lat": 10.80875,
-			   "lon": 78.69875
-			 },
-			 {
-			   "id": 30,
-			   "city": "Aurangabad",
-			   "lat": 19.8599,
-			   "lon": 75.3122
-			 },
-			 {
-			   "id": 31,
-			   "city": "Nashik",
-			   "lat": 19.98085,
-			   "lon": 73.7864
-			 },
-			 {
-			   "id": 32,
-			   "city": "Udaipur",
-			   "lat": 24.5696,
-			   "lon": 73.7025
-			 },
-			 {
-			   "id": 33,
-			   "city": "Allahabad",
-			   "lat": 25.41955,
-			   "lon": 81.80185
-			 },
-			 {
-			   "id": 34,
-			   "city": "Ludhiana",
-			   "lat": 30.8949,
-			   "lon": 75.8606
-			 },
-			 {
-			   "id": 35,
-			   "city": "Bhopal",
-			   "lat": 23.20935,
-			   "lon": 77.3777
-			 },
-			 {
-			   "id": 36,
-			   "city": "Kozhikode",
-			   "lat": 11.25405,
-			   "lon": 75.7823
-			 },
-			 {
-			   "id": 37,
-			   "city": "Agra",
-			   "lat": 27.1641,
-			   "lon": 77.99755
-			 },
-			 {
-			   "id": 38,
-			   "city": "Guwahati",
-			   "lat": 26.1437,
-			   "lon": 91.68965
-			 },
-			 {
-			   "id": 39,
-			   "city": "Amaravathi",
-			   "lat": 16.52385,
-			   "lon": 80.50625
-			 },
-			 {
-			   "id": 40,
-			   "city": "Vijayawada",
-			   "lat": 16.4985,
-			   "lon": 80.63295
-			 },
-			 {
-			   "id": 41,
-			   "city": "Salem",
-			   "lat": 11.65615,
-			   "lon": 78.14975
-			 },
-			 {
-			   "id": 42,
-			   "city": "Puducherry",
-			   "lat": 11.92785,
-			   "lon": 79.80345
-			 },
-			 {
-			   "id": 43,
-			   "city": "Jamshedpur",
-			   "lat": 22.7729,
-			   "lon": 86.1651
-			 },
-			 {
-			   "id": 44,
-			   "city": "Ranchi",
-			   "lat": 23.3474,
-			   "lon": 85.3201
-			 },
-			 {
-			   "id": 45,
-			   "city": "Patna",
-			   "lat": 25.5968,
-			   "lon": 85.14485
-			 },
-			 {
-			   "id": 46,
-			   "city": "Hubli-Dharwad",
-			   "lat": 15.3866,
-			   "lon": 75.0623
-			 },
-			 {
-			   "id": 47,
-			   "city": "Belagavi",
-			   "lat": 15.8694,
-			   "lon": 74.4989
-			 },
-			 {
-			   "id": 48,
-			   "city": "Ajmer",
-			   "lat": 26.4358,
-			   "lon": 74.62995
-			 },
-			 {
-			   "id": 49,
-			   "city": "Jodhpur",
-			   "lat": 26.2547,
-			   "lon": 73.02085
-			 },
-			 {
-			   "id": 50,
-			   "city": "Raipur",
-			   "lat": 21.244,
-			   "lon": 81.60535
-			 },
-			 {
-			   "id": 51,
-			   "city": "Surat",
-			   "lat": 21.1632,
-			   "lon": 72.8138
-			 },
-			 {
-			   "id": 52,
-			   "city": "Amritsar",
-			   "lat": 31.6254,
-			   "lon": 74.8573
-			 },
-			 {
-			   "id": 53,
-			   "city": "Patiala",
-			   "lat": 30.32665,
-			   "lon": 76.38515
-			 },
-			 {
-			   "id": 54,
-			   "city": "Jammu",
-			   "lat": 32.70025,
-			   "lon": 74.8632
-			 },
-			 {
-			   "id": 55,
-			   "city": "Kanpur",
-			   "lat": 26.44015,
-			   "lon": 80.2987
-			 },
-			 {
-			   "id": 56,
-			   "city": "Abu Dhabi",
-			   "lat": 24.420056, 
-			   "lon": 54.439014
+			 {"id": 1,"city": "Bengaluru","lat": 12.976,"lon": 77.555},
+			 {"id": 2,"city": "Chennai","lat": 13.0485,"lon": 80.2035},
+			 {"id": 3,"city": "Mumbai","lat": 19.20655,"lon": 72.9732},
+			 {"id": 4,"city": "New Delhi","lat": 28.54655,"lon": 77.2059},
+			 {"id": 5,"city": "Hyderabad","lat": 17.4045,"lon": 78.4795},
+			 {"id": 6,"city": "Pune","lat": 18.577,"lon": 73.845},
+			 {"id": 7,"city": "Lucknow","lat": 26.8485,"lon": 80.945},
+			 {"id": 8,"city": "Ahmedabad","lat": 23.023,"lon": 72.584},
+			 {"id": 9,"city": "Chandigarh","lat": 30.728,"lon": 76.765},
+			 {"id": 10,"city": "Dehradun","lat": 30.3295,"lon": 78.0215},
+			 {"id": 11,"city": "Kovvur","lat": 17.01855,"lon": 81.72875},
+			 {"id": 12,"city": "Egattur","lat": 13.1,"lon": 79.845},
+			 {"id": 13,"city": "Meerut","lat": 28.973,"lon": 77.77845},
+			 {"id": 14,"city": "Mysore","lat": 12.31,"lon": 76.625},
+			 {"id": 15,"city": "Coimbatore","lat": 11.10035,"lon": 76.9806},
+			 {"id": 16,"city": "Rajkot","lat": 22.29,"lon": 70.78},
+			 {"id": 17,"city": "Kolkata","lat": 22.65735,"lon": 88.3294},
+			 {"id": 18,"city": "FALLBACK_city","lat": 0,"lon": 0},
+			 {"id": 19,"city": "Trivandrum","lat": 8.53026,"lon": 76.9198},
+			 {"id": 20,"city": "Jaipur","lat": 26.8818,"lon": 75.7816},
+			 {"id": 21,"city": "Mangalore","lat": 12.87075,"lon": 74.8567},
+			 {"id": 22,"city": "Visakhapatnam","lat": 17.6958,"lon": 83.22635},
+			 {"id": 23,"city": "Indore","lat": 22.72945,"lon": 75.8568},
+			 {"id": 24,"city": "Bhubaneshwar","lat": 20.38555,"lon": 85.869},
+			 {"id": 25,"city": "Kochi","lat": 10.01301,"lon": 76.3286},
+			 {"id": 26,"city": "Vadodara","lat": 22.34105,"lon": 73.17305},
+			 {"id": 27,"city": "Nagpur","lat": 21.1279,"lon": 79.07265},
+			 {"id": 28,"city": "Madurai","lat": 9.91219,"lon": 78.1087},
+			 {"id": 29,"city": "Trichy","lat": 10.80875,"lon": 78.69875},
+			 {"id": 30,"city": "Aurangabad","lat": 19.8599,"lon": 75.3122},
+			 {"id": 31,"city": "Nashik","lat": 19.98085,"lon": 73.7864},
+			 {"id": 32,"city": "Udaipur","lat": 24.5696,"lon": 73.7025},
+			 {"id": 33,"city": "Allahabad","lat": 25.41955,"lon": 81.80185},
+			 {"id": 34,"city": "Ludhiana","lat": 30.8949,"lon": 75.8606},
+			 {"id": 35,"city": "Bhopal","lat": 23.20935,"lon": 77.3777},
+			 {"id": 36,"city": "Kozhikode","lat": 11.25405,"lon": 75.7823},
+			 {"id": 37,"city": "Agra","lat": 27.1641,"lon": 77.99755},
+			 {"id": 38,"city": "Guwahati","lat": 26.1437,"lon": 91.68965},
+			 {"id": 39,"city": "Amaravathi","lat": 16.52385,"lon": 80.50625},
+			 {"id": 40,"city": "Vijayawada","lat": 16.4985,"lon": 80.63295},
+			 {"id": 41,"city": "Salem","lat": 11.65615,"lon": 78.14975},
+			 {"id": 42,"city": "Puducherry","lat": 11.92785,"lon": 79.80345},
+			 {"id": 43,"city": "Jamshedpur","lat": 22.7729,"lon": 86.1651},
+			 {"id": 44,"city": "Ranchi","lat": 23.3474,"lon": 85.3201},
+			 {"id": 45,"city": "Patna","lat": 25.5968,"lon": 85.14485},
+			 {"id": 46,"city": "Hubli-Dharwad","lat": 15.3866,"lon": 75.0623},
+			 {"id": 47,"city": "Belagavi","lat": 15.8694,"lon": 74.4989},
+			 {"id": 48,"city": "Ajmer","lat": 26.4358,"lon": 74.62995},
+			 {"id": 49,"city": "Jodhpur","lat": 26.2547,"lon": 73.02085},
+			 {"id": 50,"city": "Raipur","lat": 21.244,"lon": 81.60535},
+			 {"id": 51,"city": "Surat","lat": 21.1632,"lon": 72.8138},
+			 {"id": 52,"city": "Amritsar","lat": 31.6254,"lon": 74.8573},
+			 {"id": 53,"city": "Patiala","lat": 30.32665,"lon": 76.38515},
+			 {"id": 54,"city": "Jammu","lat": 32.70025,"lon": 74.8632},
+			 {"id": 55,"city": "Kanpur","lat": 26.44015,"lon": 80.2987},
+			 {"id": 56,"city": "Abu Dhabi","lat": 24.420056, "lon": 54.439014
 			 }
 			],
 	"edges": [
-			 {
-			   "source": 1,
-			   "target": 2,
-			   "count": 12
-			 },
-			 {
-			   "source": 1,
-			   "target": 3,
-			   "count": 14
-			 },
-			 {
-			   "source": 1,
-			   "target": 4,
-			   "count": 37
-			 },
-			 {
-			   "source": 1,
-			   "target": 5,
-			   "count": 25
-			 },
-			 {
-			   "source": 1,
-			   "target": 6,
-			   "count": 13
-			 },
-			 {
-			   "source": 1,
-			   "target": 7,
-			   "count": 1
-			 },
-			 {
-			   "source": 1,
-			   "target": 8,
-			   "count": 2
-			 },
-			 {
-			   "source": 1,
-			   "target": 9,
-			   "count": 2
-			 },
-			 {
-			   "source": 1,
-			   "target": 15,
-			   "count": 2
-			 },
-			 {
-			   "source": 1,
-			   "target": 17,
-			   "count": 8
-			 },
-			 {
-			   "source": 1,
-			   "target": 56,
-			   "count": 36
-			 },
-			 {
-			   "source": 1,
-			   "target": 21,
-			   "count": 1
-			 },
-			 {
-			   "source": 1,
-			   "target": 24,
-			   "count": 1
-			 },
-			 {
-			   "source": 1,
-			   "target": 25,
-			   "count": 2
-			 },
-			 {
-			   "source": 1,
-			   "target": 27,
-			   "count": 2
-			 },
-			 {
-			   "source": 1,
-			   "target": 28,
-			   "count": 1
-			 },
-			 {
-			   "source": 1,
-			   "target": 32,
-			   "count": 2
-			 },
-			 {
-			   "source": 1,
-			   "target": 44,
-			   "count": 1
-			 },
-			 {
-			   "source": 1,
-			   "target": 46,
-			   "count": 2
-			 },
-			 {
-			   "source": 1,
-			   "target": 47,
-			   "count": 2
-			 },
-			 {
-			   "source": 1,
-			   "target": 54,
-			   "count": 1
-			 },
-			 {
-			   "source": 1,
-			   "target": 55,
-			   "count": 1
-			 },
-			 {
-			   "source": 2,
-			   "target": 1,
-			   "count": 6
-			 },
-			 {
-			   "source": 2,
-			   "target": 5,
-			   "count": 3
-			 },
-			 {
-			   "source": 2,
-			   "target": 15,
-			   "count": 2
-			 },
-			 {
-			   "source": 2,
-			   "target": 56,
-			   "count": 1
-			 },
-			 {
-			   "source": 2,
-			   "target": 25,
-			   "count": 1
-			 },
-			 {
-			   "source": 2,
-			   "target": 42,
-			   "count": 1
-			 },
-			 {
-			   "source": 3,
-			   "target": 1,
-			   "count": 11
-			 },
-			 {
-			   "source": 3,
-			   "target": 2,
-			   "count": 2
-			 },
-			 {
-			   "source": 3,
-			   "target": 4,
-			   "count": 2
-			 },
-			 {
-			   "source": 3,
-			   "target": 5,
-			   "count": 1
-			 },
-			 {
-			   "source": 3,
-			   "target": 6,
-			   "count": 3
-			 },
-			 {
-			   "source": 3,
-			   "target": 17,
-			   "count": 2
-			 },
-			 {
-			   "source": 3,
-			   "target": 56,
-			   "count": 2
-			 },
-			 {
-			   "source": 4,
-			   "target": 1,
-			   "count": 20
-			 },
-			 {
-			   "source": 4,
-			   "target": 3,
-			   "count": 1
-			 },
-			 {
-			   "source": 4,
-			   "target": 5,
-			   "count": 1
-			 },
-			 {
-			   "source": 4,
-			   "target": 6,
-			   "count": 2
-			 },
-			 {
-			   "source": 4,
-			   "target": 56,
-			   "count": 2
-			 },
-			 {
-			   "source": 5,
-			   "target": 1,
-			   "count": 10
-			 },
-			 {
-			   "source": 5,
-			   "target": 4,
-			   "count": 1
-			 },
-			 {
-			   "source": 5,
-			   "target": 6,
-			   "count": 2
-			 },
-			 {
-			   "source": 5,
-			   "target": 56,
-			   "count": 2
-			 },
-			 {
-			   "source": 5,
-			   "target": 22,
-			   "count": 1
-			 },
-			 {
-			   "source": 5,
-			   "target": 40,
-			   "count": 1
-			 },
-			 {
-			   "source": 6,
-			   "target": 1,
-			   "count": 9
-			 },
-			 {
-			   "source": 6,
-			   "target": 2,
-			   "count": 1
-			 },
-			 {
-			   "source": 6,
-			   "target": 3,
-			   "count": 7
-			 },
-			 {
-			   "source": 6,
-			   "target": 5,
-			   "count": 2
-			 },
-			 {
-			   "source": 6,
-			   "target": 8,
-			   "count": 2
-			 },
-			 {
-			   "source": 6,
-			   "target": 56,
-			   "count": 4
-			 },
-			 {
-			   "source": 6,
-			   "target": 27,
-			   "count": 1
-			 },
-			 {
-			   "source": 10,
-			   "target": 1,
-			   "count": 1
-			 },
-			 {
-			   "source": 14,
-			   "target": 1,
-			   "count": 1
-			 },
-			 {
-			   "source": 17,
-			   "target": 1,
-			   "count": 2
-			 },
-			 {
-			   "source": 56,
-			   "target": 1,
-			   "count": 2
-			 },
-			 {
-			   "source": 56,
-			   "target": 2,
-			   "count": 1
-			 },
-			 {
-			   "source": 56,
-			   "target": 56,
-			   "count": 2
-			 },
-			 {
-			   "source": 25,
-			   "target": 56,
-			   "count": 1
-			 },
-			 {
-			   "source": 27,
-			   "target": 56,
-			   "count": 1
+			 {"source": 1,"target": 2,"count": 12},
+			 {"source": 1,"target": 3,"count": 14},
+			 {"source": 1,"target": 4,"count": 37},
+			 {"source": 1,"target": 5,"count": 25},
+			 {"source": 1,"target": 6,"count": 13},
+			 {"source": 1,"target": 7,"count": 1},
+			 {"source": 1,"target": 8,"count": 2},
+			 {"source": 1,"target": 9,"count": 2},
+			 {"source": 1,"target": 15,"count": 2},
+			 {"source": 1,"target": 17,"count": 8},
+			 {"source": 1,"target": 56,"count": 36},
+			 {"source": 1,"target": 21,"count": 1},
+			 {"source": 1,"target": 24,"count": 1},
+			 {"source": 1,"target": 25,"count": 2},
+			 {"source": 1,"target": 27,"count": 2},
+			 {"source": 1,"target": 28,"count": 1},
+			 {"source": 1,"target": 32,"count": 2},
+			 {"source": 1,"target": 44,"count": 1},
+			 {"source": 1,"target": 46,"count": 2},
+			 {"source": 1,"target": 47,"count": 2},
+			 {"source": 1,"target": 54,"count": 1},
+			 {"source": 1,"target": 55,"count": 1},
+			 {"source": 2,"target": 1,"count": 6},
+			 {"source": 2,"target": 5,"count": 3},
+			 {"source": 2,"target": 15,"count": 2},
+			 {"source": 2,"target": 56,"count": 1},
+			 {"source": 2,"target": 25,"count": 1},
+			 {"source": 2,"target": 42,"count": 1},
+			 {"source": 3,"target": 1,"count": 11},
+			 {"source": 3,"target": 2,"count": 2},
+			 {"source": 3,"target": 4,"count": 2},
+			 {"source": 3,"target": 5,"count": 1},
+			 {"source": 3,"target": 6,"count": 3},
+			 {"source": 3,"target": 17,"count": 2},
+			 {"source": 3,"target": 56,"count": 2},
+			 {"source": 4,"target": 1,"count": 20},
+			 {"source": 4,"target": 3,"count": 1},
+			 {"source": 4,"target": 5,"count": 1},
+			 {"source": 4,"target": 6,"count": 2},
+			 {"source": 4,"target": 56,"count": 2},
+			 {"source": 5,"target": 1,"count": 10},
+			 {"source": 5,"target": 4,"count": 1},
+			 {"source": 5,"target": 6,"count": 2},
+			 {"source": 5,"target": 56,"count": 2},
+			 {"source": 5,"target": 22,"count": 1},
+			 {"source": 5,"target": 40,"count": 1},
+			 {"source": 6,"target": 1,"count": 9},
+			 {"source": 6,"target": 2,"count": 1},
+			 {"source": 6,"target": 3,"count": 7},
+			 {"source": 6,"target": 5,"count": 2},
+			 {"source": 6,"target": 8,"count": 2},
+			 {"source": 6,"target": 56,"count": 4},
+			 {"source": 6,"target": 27,"count": 1},
+			 {"source": 10,"target": 1,"count": 1},
+			 {"source": 14,"target": 1,"count": 1},
+			 {"source": 17,"target": 1,"count": 2},
+			 {"source": 56,"target": 1,"count": 2},
+			 {"source": 56,"target": 2,"count": 1},
+			 {"source": 56,"target": 56,"count": 2},
+			 {"source": 25,"target": 56,"count": 1},
+			 {"source": 27,"target": 56,"count": 1
 			 }
 			]
 }
