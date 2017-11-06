@@ -23,18 +23,20 @@ var dataSet = {};
 d3.json("data.json",function(error,dataSet){
   if(error) throw error;
   
-  var svg = d3.select('svg'), width = Math.max(960, window.innerWidth), height = 600;
+  var svg = d3.select('svg'), 
+      width = 960, height = 600;
     
-    svg.attr('width',width-20)
-    .attr('height',height);
+  svg.attr('width',width-20)
+      .attr('height',height);
 
   var g = svg.append("g");  
   g.append("use")
     .attr("xlink:href","india.svg#Layer_1");
   
-    var nodeg = g.append("g")
+  var nodeg = g.append("g")
           .attr("id","nodes");
-    var tooltip = d3.select("body")
+  
+  var tooltip = d3.select("body")
       .append("div")
       .style("border","1px solid #9768d1")
       .style("position", "absolute")
@@ -42,12 +44,13 @@ d3.json("data.json",function(error,dataSet){
       .style("padding","5px")
       .style("z-index", "10")
       .style("visibility", "hidden");
-
+  // Scales for x(Longitude), y(Latitude), thickness (count)
   var x = d3.scaleLinear()
       .domain([
         d3.min(dataSet.nodes,function(d){ return (d.lon);}),
         d3.max(dataSet.nodes,function(d){ return (d.lon);})])
       .range([-790,656]);
+  
   var y = d3.scaleLinear()
       .domain([
           d3.max(dataSet.nodes,function(d){ return (d.lat);}),
@@ -57,12 +60,13 @@ d3.json("data.json",function(error,dataSet){
   var thicknessScale = d3.scaleLinear()
       .domain(d3.extent(dataSet.edges,function(d){ return d.count; }))
       .range([1,Math.min(4,d3.max(dataSet.edges,function(d){ return d.count;}))])
+  
   // Enable SVG pan & zoom
   function zoomed() {
       g.attr("transform", d3.event.transform);
     }
   svg.call(d3.zoom().scaleExtent([0.5, 8]).on('zoom',zoomed));
-
+  // Draw dots on all the cities
   var dots = nodeg.selectAll("g")
     .data(dataSet.nodes)
     .enter()
@@ -77,7 +81,7 @@ d3.json("data.json",function(error,dataSet){
       .attr("r",function(d){ return 1;})
       .attr("id",function(d){return "c"+d.id;})
       .style("fill","#9768d1");
-  dots.on("mouseover", function(d){ 
+  dots.on("mouseover", function(d){ // On mouseover on nodes, highlight the edges originating from this node and explain node details
         tooltip.style("visibility", "visible")
         .html("<b>"+d.city+"</b><br>");
         d3.selectAll(".edge").each(function(edge){
@@ -96,50 +100,49 @@ d3.json("data.json",function(error,dataSet){
 
       .append("svg:title")
       .text(function(d,i){ return d.name;});
-
-
+  
+  // Edges of the graphs are lines from source to target with a thickness of count
   var edgeg = g.append("g")
           .attr("class","edges");
-  var lines = edgeg.selectAll(".edges")
-    .data(dataSet.edges)
-    .enter()
-    .append("g")
-      .attr("id",function(d,i){  return "edge_from_"+d.source+"_to_"+d.target; })
-      .attr("class","edge")
-      .append("path")
-        .attr("class", "running")
-        .attr("id", function(d){ return "edge_from"+d.source+"_to"+d.target; })
-        .attr("stroke",'#73be44')
-        .attr("d",function(d,i){
-          var x2 = x(dataSet.nodes[d.target-1].lon), x1 = x(dataSet.nodes[d.source-1].lon);
-          var y2 = y(dataSet.nodes[d.target-1].lat) ,y1 = y(dataSet.nodes[d.source-1].lat);
-          var dx = x2 - x1, dy = y2 - y1, distance = Math.sqrt(Math.pow(dx,2)+Math.pow(dy,2));
-          var dr = distance*2;
-          return "M" + x1 + "," + y1 + "A" + dr + ","+ dr + " 0 0,1 "+ x2 + "," + y2;
-        })
-        .style("stroke-width", function(d) {  return thicknessScale(d.count); })
-        .style("z-index","10")
-        .attr("fill","none")
-        .style("cursor","pointer")
-        .attr("fillOpacity","0")
-        .attr("stroke-dasharray","20 3");
-
-  lines.on("mouseover", function(d){
+  var lines = edgeg.selectAll(".edges") 
+                    .data(dataSet.edges)
+                    .enter()
+                    .append("g")
+                      .attr("id",function(d,i){  return "edge_from_"+d.source+"_to_"+d.target; })
+                      .attr("class","edge")
+                      .append("path")
+                        .attr("class", "running")
+                        .attr("id", function(d){ return "edge_from"+d.source+"_to"+d.target; })
+                        .attr("stroke",'#73be44')
+                        .attr("d",function(d,i){ // Path d to be curved at a dr of 2 x distance, from (x1, y1) to (x2, y2)
+                            var x2 = x(dataSet.nodes[d.target-1].lon), x1 = x(dataSet.nodes[d.source-1].lon);
+                            var y2 = y(dataSet.nodes[d.target-1].lat) ,y1 = y(dataSet.nodes[d.source-1].lat);
+                            var dx = x2 - x1, dy = y2 - y1, distance = Math.sqrt(Math.pow(dx,2)+Math.pow(dy,2));
+                            var dr = distance*2;
+                            return "M" + x1 + "," + y1 + "A" + dr + ","+ dr + " 0 0,1 "+ x2 + "," + y2;
+                        })
+                        .style("stroke-width", function(d) {  return thicknessScale(d.count); }) 
+                        .style("z-index","10")
+                        .attr("fill","none")
+                        .style("cursor","pointer")
+                        .attr("fillOpacity","0")
+                        .attr("stroke-dasharray","20 3");
+  
+  lines.on("mouseover", function(d){ // On mouseover of edge, highlight the edge and tooltip edge details
           d3.selectAll(".edge").each(function(edge){
             d3.select("#edge_from"+edge.source+"_to"+edge.target)
-                      .attr("opacity","0.15");
+                 .attr("opacity","0.15");
             });
           d3.select(this)
                 .attr("opacity","1");
-          tooltip.style("visibility", "visible").html("<b>"+dataSet.nodes[d.source-1].city+
-            " to "+dataSet.nodes[d.target-1].city);
+          tooltip.style("visibility", "visible").html("<b>"+dataSet.nodes[d.source-1].city+" to "+dataSet.nodes[d.target-1].city);
         })
-        .on("mousemove", function(d){return tooltip.style("top",
-             (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
+        .on("mousemove", function(d){
+            return tooltip.style("top",(d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
         .on("mouseout", function(d){
           d3.selectAll(".edge").each(function(edge){
             d3.select("#edge_from"+edge.source+"_to"+edge.target)
-                      .attr("opacity","1");
+                .attr("opacity","1");
             });
           d3.select(this).style("stroke-width",thicknessScale(d.count))
           return tooltip.style("visibility", "hidden");});  
