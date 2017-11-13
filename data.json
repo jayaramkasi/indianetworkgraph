@@ -55,8 +55,7 @@
 			 {"id": 53,"city": "Patiala","lat": 30.32665,"lon": 76.38515},
 			 {"id": 54,"city": "Jammu","lat": 32.70025,"lon": 74.8632},
 			 {"id": 55,"city": "Kanpur","lat": 26.44015,"lon": 80.2987},
-			 {"id": 56,"city": "Abu Dhabi","lat": 24.420056, "lon": 54.439014
-			 }
+			 {"id": 56,"city": "Abu Dhabi","lat": 24.420056, "lon": 54.439014}
 			],
 	"edges": [
 			 {"source": 1,"target": 2,"count": 12},
